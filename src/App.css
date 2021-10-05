@@ -38,7 +38,7 @@
 	border-radius: 5px;
 	cursor: pointer;
 	outline: none;
-	transition: background 1s, color 1s;
+	transition: background 0.5s, color 0.5s;
 }
 .button:hover{
 	background: #e2e623;
