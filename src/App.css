@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap');
+
+.App {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+.quote {
+    background: url(./Image/Background.jpg);
+    background-size: cover;
+    width: 450px;
+    height: 320px;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.quote h2 {
+    font-size: 2em;
+    font-family: 'Lobster', cursive;
+}
+.quote small {
+    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive;
+}
+.button {
+	display: block;
+	border: 2px solid #e2e623;
+	background: transparent;
+	padding: 10px 15px;
+	color: black;
+  font-size: 1.5em;
+  font-family:'Franklin Gothic Medium', Arial, sans-serif;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	transition: background 1s, color 1s;
+}
+.button:hover{
+	background: #e2e623;
+	color: #fff;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

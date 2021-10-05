@@ -1,9 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import './App.css';
 
 function App() {
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+
+  useEffect(() => {
+    fetch("http://api.quotable.io/random")
+      .then(response => response.json())
+      .then(
+        ({content, author}) => {
+          setQuote(content);
+          setAuthor(author);
+      }
+    )
+  }, []);
+
+  let fetchQuote = () => {
+    fetch("http://api.quotable.io/random")
+      .then(response => response.json())
+      .then(
+        ({content, author}) => {
+          setQuote(content);
+          setAuthor(author);
+      }
+    )
+  }
+
   return (
     <div className="App">
-      <p>Start</p>
+      <div className="quote">
+        <h2>{quote}</h2>
+        <small>-{author}-</small>
+      </div><br />
+      <button
+        className="button"
+        onClick={fetchQuote}
+      >
+        Generate New Quote
+      </button>
     </div>
   );
 }
