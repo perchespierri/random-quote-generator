@@ -4,21 +4,22 @@ import './App.css';
 function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const endpoint = "http://api.quotable.io/random";
+  const endpoint ='https://type.fit/api/quotes';
+
   useEffect(() => {
     fetch(endpoint)
-      .then(response => response.json())
-      .then(({content, author}) => {
-        setQuote(content);
+      .then((response) => response.json())
+      .then(({text, author}) => {
+        setQuote(text);
         setAuthor(author);
       })
   }, []);
 
   let fetchQuote = () => {
     fetch(endpoint)
-      .then(response => response.json())
-      .then(({content, author}) => {
-        setQuote(content);
+      .then((response) => response.json())
+      .then(({text, author}) => {
+        setQuote(text);
         setAuthor(author);
       })
   }
