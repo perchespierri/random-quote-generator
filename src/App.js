@@ -1,34 +1,32 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
+  const [quote, setQuote] = useState('Click the button below');
+  const [author, setAuthor] = useState('Me');
   const endpoint ='https://type.fit/api/quotes';
 
-  useEffect(() => {
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then(({text, author}) => {
-        setQuote(text);
-        setAuthor(author);
-      })
-  }, []);
+  const generateRandomNumber = () => {
+    const randomNumber = Math.floor(Math.random() * 1644);
+    return randomNumber;
+  }
 
-  let fetchQuote = () => {
-    fetch(endpoint)
+  const fetchQuote = () => {
+    const randomNumber = generateRandomNumber();
+    const quote = fetch(endpoint)
       .then((response) => response.json())
-      .then(({text, author}) => {
-        setQuote(text);
-        setAuthor(author);
-      })
+      .then((response) => {
+        setQuote(response[randomNumber].text);
+        setAuthor(response[randomNumber].author);
+      });
+    return quote;
   }
 
   return (
     <div className="App">
       <div className="quote">
-        <h2>{quote}</h2>
-        <small>-{author}-</small>
+        <h2>" {quote} "</h2>
+        <small> - {author}</small>
       </div><br />
       <button
         className="button"
