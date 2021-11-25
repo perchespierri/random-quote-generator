@@ -11,7 +11,7 @@ function App() {
     return randomNumber;
   }
 
-  const fetchQuote = () => {
+  const fetchRandomQuote = () => {
     const randomNumber = generateRandomNumber();
     const quote = fetch(endpoint)
       .then((response) => response.json())
@@ -24,14 +24,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="quote">
+      <main className="quote">
         <h2>" {quote} "</h2>
-        <small> - {author}</small>
-      </div><br />
-      <button
-        className="button"
-        onClick={fetchQuote}
-      >
+        <small>- {author}</small>
+      </main>
+      <br />
+      <button className="button" onClick={fetchRandomQuote}>
         Generate New Quote
       </button>
     </div>
