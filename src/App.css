@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .App {
     display: flex;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
+    background-color: black;
 }
 
 .quote {
@@ -34,9 +40,9 @@
 .button {
 	display: block;
 	border: 2px solid #e2e623;
-	background: transparent;
+	background: black;
 	padding: 10px 15px;
-	color: black;
+	color: yellow;
     font-size: 1.5em;
     font-family:'Franklin Gothic Medium', Arial, sans-serif;
 	border-radius: 5px;
@@ -47,6 +53,6 @@
 
 .button:hover{
 	background: #e2e623;
-	color: #fff;
+	color: black;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
