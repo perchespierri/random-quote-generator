@@ -2,7 +2,7 @@
   "name": "random-quote-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://perchespierri.github.io/random-quote-generator",
+  "homepage": "https://perchespierri.github.io/random-quote-generator/public/index.html",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
